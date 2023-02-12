@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+<script>
+    function mostFrequentWord(arr, n){
+   let freq = 0;
+     let res = "";
+     
+    for(let i=0;i<n;i++){
+        let count = 0;
+        for(let j=i+1;j<n;j++){
+            if(JSON.stringify(arr[j]) === JSON.stringify(arr[i])){
+                count++;
+            }
+        }
+         
+        if(count>=freq){
+            res = arr[i];
+            freq = count;
+        }
+    }
+     
+    console.log("The word that occurs most is : " + res + "<br>");
+    console.log("No of times: " + freq);
+}
+ 
+let arr = [ "geeks", "for", "geeks", "a", "portal", "to", "learn", "can", "be", "computer", "science", "zoom", "yup", "fire", "in", "be", "data", "geeks" ];
+let n = arr.length;
+ 
+mostFrequentWord(arr, n);
+</script>
+</body>
+</html>
